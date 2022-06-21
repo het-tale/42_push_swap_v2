@@ -6,7 +6,7 @@
 /*   By: het-tale <het-tale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 14:43:15 by het-tale          #+#    #+#             */
-/*   Updated: 2022/06/21 15:29:57 by het-tale         ###   ########.fr       */
+/*   Updated: 2022/06/21 19:14:36 by het-tale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,18 @@ int     is_empty(t_list *stack);
 void	traverse_stack(t_list *a);//remove
 void    push_at_first(t_list *stack, t_node *temp);
 void	is_duplicated(t_list *a);
+int     is_sorted(t_list *a);
+int     ft_only_one(t_list *a);
+void    ft_swap(int *a, int *b);
+void    swap_two_first(t_list *a);
+void    swap_two(t_list *a, t_list *b);
+void    push_at_last(t_list *stack, t_node *n);
+t_node  *pop_stack(t_list *a);
+void    push_stack(t_list *a, t_list *b);
+void    rotate(t_list *a);
+t_node  *del_last(t_list *a);
+void    rev_rotate(t_list *a);
+void	print_inst(char *instruction);
+void    rev_rotate_two(t_list *a, t_list *b);
+void    rotate_two(t_list *a, t_list *b);
 #endif

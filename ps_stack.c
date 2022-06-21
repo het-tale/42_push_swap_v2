@@ -6,7 +6,7 @@
 /*   By: het-tale <het-tale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 17:24:23 by het-tale          #+#    #+#             */
-/*   Updated: 2022/06/13 10:59:40 by het-tale         ###   ########.fr       */
+/*   Updated: 2022/06/21 16:55:04 by het-tale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,18 @@ t_list	*get_stack(int argc, char *argv[], t_list *stack)
 		free(split);
 	}
 	return (stack);
+}
+
+void	print_inst(char *instruction)
+{
+	size_t	len;
+	size_t	i;
+
+	len = ft_strlen(instruction);
+	i = 0;
+	while (i < len)
+	{
+		write(1, &instruction[i], 1);
+		i++;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: het-tale <het-tale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 10:03:17 by het-tale          #+#    #+#             */
-/*   Updated: 2022/06/21 15:38:32 by het-tale         ###   ########.fr       */
+/*   Updated: 2022/06/21 19:34:49 by het-tale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,3 @@ int	ft_atoi(const char *str)
 		ft_error();
 	return ((int)res * d);
 }
-
-// int main()
-// {
-// 	printf("%d", ft_atoi("2147483648"));
-// }
