@@ -6,7 +6,7 @@
 #    By: het-tale <het-tale@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/25 03:23:24 by het-tale          #+#    #+#              #
-#    Updated: 2022/06/21 16:50:39 by het-tale         ###   ########.fr        #
+#    Updated: 2022/06/21 21:10:52 by het-tale         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ BONUS_DIR = bonus
 			ps_errors.c ps_list.c ps_push_pop.c ps_push.c ps_rev_rotate.c ps_rotate.c ps_stack.c ps_swap_stacks.c \
 			sort_big_stack_utils.c sort_big_stack_utils2.c sort_three_five.c
 
-SRCS	= *.c libft/*.c instructions/*.c
+SRCS	= *.c libft/*.c instructions/*.c sorting/*.c stack/*.c
 
 SRCB	= libft/*.c bonus/*.c *.c
 

@@ -6,7 +6,7 @@
 /*   By: het-tale <het-tale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 14:43:15 by het-tale          #+#    #+#             */
-/*   Updated: 2022/06/21 19:14:36 by het-tale         ###   ########.fr       */
+/*   Updated: 2022/06/22 13:40:38 by het-tale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,8 @@ void    rev_rotate(t_list *a);
 void	print_inst(char *instruction);
 void    rev_rotate_two(t_list *a, t_list *b);
 void    rotate_two(t_list *a, t_list *b);
+void    instructions(t_list *a, int d);
+int     stack_size(t_list *a);
+void	sort_stack(t_list *a, t_list *b);
+void    three_elements(t_list *a);
 #endif

@@ -1,54 +1,71 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_stack.c                                         :+:      :+:    :+:   */
+/*   ps_errors.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: het-tale <het-tale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/12 17:24:23 by het-tale          #+#    #+#             */
-/*   Updated: 2022/06/21 16:55:04 by het-tale         ###   ########.fr       */
+/*   Created: 2022/05/22 19:35:46 by het-tale          #+#    #+#             */
+/*   Updated: 2022/06/21 20:32:44 by het-tale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-t_list	*get_stack(int argc, char *argv[], t_list *stack)
+int	ft_isinteger(char *s)
 {
-	int		i;
-	int		j;
-	char	**split;
-	int		atoi;
-	t_node	*temp;
+	int	i;
 
-	j = argc - 1;
-	while (j > 0)
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == '-' || s[i] == '+')
+			i++;
+		if (!ft_isdigit(s[i]))
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+void	check_error(int argc, char *argv[])
+{
+	int		j;
+	int		i;
+	char	**split;
+
+	j = 1;
+	while (j < argc)
 	{
 		split = ft_split(argv[j], ' ');
 		i = 0;
 		while (split[i])
 		{
-			atoi = ft_atoi(split[i]);
-			temp = new_node(atoi);
-			push_at_first(stack, temp);
+			if (!ft_isinteger(split[i]))
+				ft_error();
 			free(split[i]);
 			i++;
 		}
-		j--;
+		j++;
 		free(split);
 	}
-	return (stack);
 }
 
-void	print_inst(char *instruction)
+void	is_duplicated(t_list *a)
 {
-	size_t	len;
-	size_t	i;
+	t_node	*temp;
+	t_node	*tmp;
 
-	len = ft_strlen(instruction);
-	i = 0;
-	while (i < len)
+	temp = a->top;
+	while (temp)
 	{
-		write(1, &instruction[i], 1);
-		i++;
+		tmp = temp->next;
+		while (tmp)
+		{
+			if (temp->data == tmp->data)
+				ft_error();
+			tmp = tmp->next;
+		}
+		temp = temp->next;
 	}
 }

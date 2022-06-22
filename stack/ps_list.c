@@ -6,11 +6,11 @@
 /*   By: het-tale <het-tale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 23:29:35 by het-tale          #+#    #+#             */
-/*   Updated: 2022/06/21 16:34:12 by het-tale         ###   ########.fr       */
+/*   Updated: 2022/06/21 20:32:52 by het-tale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 t_node	*new_node(int data)
 {
