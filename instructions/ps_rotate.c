@@ -12,30 +12,30 @@
 
 #include "../push_swap.h"
 
-void    rotate(t_list *a)
+void	rotate(t_list *a)
 {
-    t_node  *removed;
+	t_node	*removed;
 
-    removed = pop_stack(a);
-    push_at_last(a, removed);
+	removed = pop_stack(a);
+	push_at_last(a, removed);
 }
 
-void    rev_rotate(t_list *a)
+void	rev_rotate(t_list *a)
 {
-    t_node  *removed;
+	t_node	*removed;
 
-    removed = del_last(a);
-    push_at_first(a, removed);
+	removed = del_last(a);
+	push_at_first(a, removed);
 }
 
-void    rotate_two(t_list *a, t_list *b)
+void	rotate_two(t_list *a, t_list *b)
 {
-    rotate(a);
-    rotate(b);
+	rotate(a);
+	rotate(b);
 }
 
-void    rev_rotate_two(t_list *a, t_list *b)
+void	rev_rotate_two(t_list *a, t_list *b)
 {
-    rev_rotate(a);
-    rev_rotate(b);
+	rev_rotate(a);
+	rev_rotate(b);
 }

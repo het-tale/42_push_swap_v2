@@ -6,7 +6,7 @@
 /*   By: het-tale <het-tale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 17:24:23 by het-tale          #+#    #+#             */
-/*   Updated: 2022/06/22 13:36:34 by het-tale         ###   ########.fr       */
+/*   Updated: 2022/06/23 14:20:23 by het-tale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,16 @@ int	stack_size(t_list *a)
 		temp = temp->next;
 	}
 	return (size);
+}
+
+t_node	*get_last(t_list *a)
+{
+	t_node	*last;
+
+	last = a->top;
+	while (last->next)
+	{		
+		last = last->next;
+	}
+	return (last);
 }

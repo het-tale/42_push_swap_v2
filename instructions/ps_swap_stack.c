@@ -12,23 +12,23 @@
 
 #include "../push_swap.h"
 
-void    ft_swap(int *a, int *b)
+void	ft_swap(int *a, int *b)
 {
-    int temp;
+	int	temp;
 
-    temp = *a;
-    *a = *b;
-    *b = temp;
+	temp = *a;
+	*a = *b;
+	*b = temp;
 }
 
-void    swap_two_first(t_list *a)
+void	swap_two_first(t_list *a)
 {
-    if (!ft_only_one(a) && !is_empty(a))
-        ft_swap(&(a->top->data), &(a->top->next->data));
+	if (!ft_only_one(a) && !is_empty(a))
+		ft_swap(&(a->top->data), &(a->top->next->data));
 }
 
-void    swap_two(t_list *a, t_list *b)
+void	swap_two(t_list *a, t_list *b)
 {
-    swap_two_first(a);
-    swap_two_first(b);
+	swap_two_first(a);
+	swap_two_first(b);
 }
