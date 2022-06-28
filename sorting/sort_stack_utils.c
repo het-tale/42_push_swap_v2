@@ -90,9 +90,71 @@ t_list	*rotate_copy_stack(t_list *a)
 	return (copy);
 }
 
-int	*get_lis(t_list *a)
+void	init_array(int *arr, t_list *copy)
 {
+	int	i;
+	int	size;
+
+	i = 0;
+	size = stack_size(copy);
+	while (i < size)
+	{
+		arr[i] = 1;
+		i++;
+	}
+}
+
+int	get_lis_len(t_list *copy, int *arr)
+{
+	// t_list	*copy;
+	// int		*arr;
+	int		i;
+	int		j;
+	t_node	*temp;
+	int		len;
+	t_node	*tmp;
+
+	i = 0;
+	len = 0;
+	//copy = rotate_copy_stack(a);
+	temp = copy->top;
+	// arr = malloc(sizeof(int) * stack_size(copy));
+	// init_array(arr, copy);
+	while (temp->next)
+	{
+		i = get_index(copy, temp->next);
+		j = 0;
+		tmp = copy->top;
+		while (j < i)
+		{
+			if (temp->next->data > tmp->data && arr[i] <= arr[j])
+			{
+				arr[i] = arr[j] + 1;
+				len = arr[i];
+			}
+			j++;
+			tmp = tmp->next;
+		}
+		temp = temp->next;
+	}
+	return (len);
+}
+
+void	get_lis(t_list *a)
+{
+	int	*lis;
+	int	len;
 	t_list	*copy;
+	int		*arr;
+	int		i;
+	int		j;
 
 	copy = rotate_copy_stack(a);
+	arr = malloc(sizeof(int) * stack_size(copy));
+	init_array(arr, copy);
+	len = get_lis_len(copy, arr);
+	lis = malloc(len * sizeof(int));
+	i = stack_size(copy) - 1;
+	j = len;
+	
 }

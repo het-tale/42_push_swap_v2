@@ -6,7 +6,7 @@
 /*   By: het-tale <het-tale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 14:43:15 by het-tale          #+#    #+#             */
-/*   Updated: 2022/06/22 19:39:31 by het-tale         ###   ########.fr       */
+/*   Updated: 2022/06/28 01:09:02 by het-tale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,7 @@ t_node	*get_last(t_list *a);
 t_node	*get_min(t_list *copy);
 int		get_index(t_list *a, t_node *n);
 t_list	*rotate_copy_stack(t_list *a);
+void	init_array(int *arr, t_list *copy);
+int		get_lis_len(t_list *copy, int *arr);
+void	get_lis(t_list *a);
 #endif
