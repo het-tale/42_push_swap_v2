@@ -106,8 +106,6 @@ void	init_array(int *arr, t_list *copy)
 
 int	get_lis_len(t_list *copy, int *arr)
 {
-	// t_list	*copy;
-	// int		*arr;
 	int		i;
 	int		j;
 	t_node	*temp;
@@ -116,10 +114,7 @@ int	get_lis_len(t_list *copy, int *arr)
 
 	i = 0;
 	len = 0;
-	//copy = rotate_copy_stack(a);
 	temp = copy->top;
-	// arr = malloc(sizeof(int) * stack_size(copy));
-	// init_array(arr, copy);
 	while (temp->next)
 	{
 		i = get_index(copy, temp->next);
@@ -140,21 +135,32 @@ int	get_lis_len(t_list *copy, int *arr)
 	return (len);
 }
 
-void	get_lis(t_list *a)
+int	*get_lis(t_list *a, int size)
 {
-	int	*lis;
-	int	len;
-	t_list	*copy;
-	int		*arr;
-	int		i;
-	int		j;
+	t_lis	longest;
 
-	copy = rotate_copy_stack(a);
-	arr = malloc(sizeof(int) * stack_size(copy));
-	init_array(arr, copy);
-	len = get_lis_len(copy, arr);
-	lis = malloc(len * sizeof(int));
-	i = stack_size(copy) - 1;
-	j = len;
-	
+	longest.copy = rotate_copy_stack(a);
+	longest.arr = malloc(sizeof(int) * size);
+	init_array(longest.arr, longest.copy);
+	longest.len = get_lis_len(longest.copy, longest.arr);
+	longest.lis = malloc(longest.len * sizeof(int));
+	longest.i = size - 1;
+	longest.j = longest.len - 1;
+	longest.k = longest.arr[longest.i];
+	longest.l = 0;
+	while (longest.i >= 0)
+	{
+		if (longest.arr[longest.i] == longest.k - longest.l)
+		{
+			longest.val = find_val(longest.copy, longest.i);
+			if (longest.val)
+			{
+				longest.lis[longest.j] = longest.val->data;
+				longest.j--;
+			}
+			longest.l++;
+		}
+		longest.i--;
+	}
+	return (longest.lis);
 }
