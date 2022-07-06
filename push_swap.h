@@ -6,7 +6,7 @@
 /*   By: het-tale <het-tale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 14:43:15 by het-tale          #+#    #+#             */
-/*   Updated: 2022/06/30 18:15:28 by het-tale         ###   ########.fr       */
+/*   Updated: 2022/07/06 18:39:14 by het-tale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef struct s_list
 
 typedef struct s_lis
 {
-	int		*lis;
+	t_list	*lis;
 	int		len;
 	t_list	*copy;
 	int		*arr;
@@ -75,6 +75,12 @@ int		get_index(t_list *a, t_node *n);
 t_list	*rotate_copy_stack(t_list *a);
 void	init_array(int *arr, t_list *copy);
 int		get_lis_len(t_list *copy, int *arr);
-int		*get_lis(t_list *a, int size);
+t_list	*get_lis(t_list *a, int size);
 t_node	*find_val(t_list *copy, int i);
+void	send_to_b(t_list *a, t_list *b, int size);
+int		*put_on_top(t_list *b, int size);
+void	sort_big_stack(t_list *a, t_list *b, int size_a);
+int		*a_position(t_list *a, t_list *b, int size);
+int		max(int a, int b);
+int		min(int a, int b);
 #endif

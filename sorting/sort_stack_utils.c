@@ -135,7 +135,7 @@ int	get_lis_len(t_list *copy, int *arr)
 	return (len);
 }
 
-int	*get_lis(t_list *a, int size)
+t_list	*get_lis(t_list *a, int size)
 {
 	t_lis	longest;
 
@@ -143,9 +143,8 @@ int	*get_lis(t_list *a, int size)
 	longest.arr = malloc(sizeof(int) * size);
 	init_array(longest.arr, longest.copy);
 	longest.len = get_lis_len(longest.copy, longest.arr);
-	longest.lis = malloc(longest.len * sizeof(int));
+	longest.lis = new_list();
 	longest.i = size - 1;
-	longest.j = longest.len - 1;
 	longest.k = longest.arr[longest.i];
 	longest.l = 0;
 	while (longest.i >= 0)
@@ -154,10 +153,7 @@ int	*get_lis(t_list *a, int size)
 		{
 			longest.val = find_val(longest.copy, longest.i);
 			if (longest.val)
-			{
-				longest.lis[longest.j] = longest.val->data;
-				longest.j--;
-			}
+				push_at_first(longest.lis, longest.val);
 			longest.l++;
 		}
 		longest.i--;

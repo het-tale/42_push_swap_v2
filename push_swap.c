@@ -6,7 +6,7 @@
 /*   By: het-tale <het-tale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 03:40:53 by het-tale          #+#    #+#             */
-/*   Updated: 2022/06/30 18:15:39 by het-tale         ###   ########.fr       */
+/*   Updated: 2022/07/02 16:25:41 by het-tale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	sort_stack(t_list *a, t_list *b)
 {
 	int	size;
 
-	(void)b;
 	size = stack_size(a);
 	if (size == 2)
 	{
@@ -25,6 +24,8 @@ void	sort_stack(t_list *a, t_list *b)
 	}
 	else if (size == 3)
 		three_elements(a);
+	else
+		sort_big_stack(a, b, size);
 }
 
 int	main(int argc, char *argv[])
