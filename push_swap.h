@@ -6,7 +6,7 @@
 /*   By: het-tale <het-tale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 14:43:15 by het-tale          #+#    #+#             */
-/*   Updated: 2022/07/06 18:39:14 by het-tale         ###   ########.fr       */
+/*   Updated: 2022/07/08 20:17:04 by het-tale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,11 @@ void	send_to_b(t_list *a, t_list *b, int size);
 int		*put_on_top(t_list *b, int size);
 void	sort_big_stack(t_list *a, t_list *b, int size_a);
 int		*a_position(t_list *a, t_list *b, int size);
-int		max(int a, int b);
-int		min(int a, int b);
+t_node	*max(t_node *a, t_node *b);
+t_node	*min(t_node *a, t_node *b);
+t_node	*get_max(t_list *a);
+int		abs(int a);
+int		*best(int *positions, int size_b);
+void	send_to_a(int *best, t_list *b, t_list *a, int *positions, int *moves);
+void	rotate_smallest(t_list *a, int size);
 #endif
