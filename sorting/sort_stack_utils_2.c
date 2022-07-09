@@ -303,10 +303,12 @@ void	send_to_a(int *best, t_list *b, t_list *a, int *positions, int *moves)
 						k++;
 					}
 					push_stack(a, b);
+					print_inst("pa\n");
 				}
 				else
 				{
 					push_stack(a, b);
+					print_inst("pa\n");
 					k = 0;
 					while (k < positions[index])
 					{

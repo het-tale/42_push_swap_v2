@@ -6,7 +6,7 @@
 #    By: het-tale <het-tale@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/25 03:23:24 by het-tale          #+#    #+#              #
-#    Updated: 2022/06/21 21:10:52 by het-tale         ###   ########.fr        #
+#    Updated: 2022/07/09 00:00:42 by het-tale         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,8 @@ FLAGS    =    -Wall -Wextra -Werror
 RM        =    rm -f
 
 CC        =    gcc
+
+#SAN		= -g -fsanitize=address
 
 all : $(NAME)
 

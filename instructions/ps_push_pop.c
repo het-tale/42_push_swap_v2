@@ -45,7 +45,14 @@ t_node	*pop_stack(t_list *a)
 	t_node	*removed;
 
 	removed = NULL;
-	if (!is_empty(a))
+	if (ft_only_one(a))
+	{
+		removed = a->top;
+		removed->next = NULL;
+		removed->prev = NULL;
+		a->top = NULL;
+	}
+	else if (!is_empty(a))
 	{
 		removed = a->top;
 		a->top->next->prev = NULL;

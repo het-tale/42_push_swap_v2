@@ -81,4 +81,5 @@ void	sort_big_stack(t_list *a, t_list *b, int size_a)
 	best1 = best(positions, size_b);
 	send_to_a(best1, b, a, positions, moves);
 	//rotate_smallest(a, size_a);
+	//10 6 4 7
 }
